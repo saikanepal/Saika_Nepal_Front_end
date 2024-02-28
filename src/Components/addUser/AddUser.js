@@ -25,7 +25,7 @@ const AddUser = () => {
             return;
         }
         setEmailError('');
-        if (userClass === 'Senior') {
+        if (userClass === 'senior') {
             if (window.confirm('Are you sure you want to create a senior user?')) {
                 createUser();
             }
