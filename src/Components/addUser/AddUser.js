@@ -127,9 +127,9 @@ const AddUser = () => {
                         onChange={(e) => setUserClass(e.target.value)}
                     >
                         <option value="">Select User Class</option>
-                        <option value="Senior">Senior</option>
+                        <option value="senior">Senior</option>
                         <option value="student">Junior</option>
-                        <option value="Intern">Intern</option>
+                        <option value="intern">Intern</option>
                     </select>
                     <button
                         className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded-md"
