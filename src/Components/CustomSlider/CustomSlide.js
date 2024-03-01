@@ -21,7 +21,7 @@ const CustomSlide = ({
   };
 
   return (
-    <div className="max-w-[1240px] mx-auto grid md:grid-cols-2">
+    <div className="gap-5 max-w-[1240px] mx-auto grid md:grid-cols-2">
       <img
         className="w-[500px] mx-auto my-4"
         src={src ? src : Laptop}
