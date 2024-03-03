@@ -1,9 +1,66 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { CountdownCircleTimer } from "react-countdown-circle-timer";
+
+// Function to calculate the discounted price
+const calculateDiscountedPrice = (price) => {
+  return Math.round(price * 0.6); // 40% discount
+};
 
 export default function Pricing() {
+  const [timeRemaining, setTimeRemaining] = useState(calculateTimeRemaining());
+
+  // Calculate the time remaining until May 30th
+  function calculateTimeRemaining() {
+    const now = new Date();
+    const endDate = new Date("2024-05-30T00:00:00Z");
+    const timeRemaining = endDate - now;
+    return Math.max(0, timeRemaining); // Ensure timeRemaining is not negative
+  }
+
+  // Update the time remaining every second
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTimeRemaining(calculateTimeRemaining());
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Countdown timer render function
+  const renderTimer = ({ remainingTime }) => {
+    if (remainingTime === 0) {
+      return <div className="text-4xl font-semibold">Discount expired!</div>;
+    }
+
+    const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+
+    return (
+      <div className="flex">
+        <div className="mr-2 animate-tickdown">
+          <div className="text-4xl font-semibold">{days}</div>
+          <div className="text-xs">Days</div>
+        </div>
+        <div className="mr-2 animate-tickdown">
+          <div className="text-4xl font-semibold">{hours}</div>
+          <div className="text-xs">Hours</div>
+        </div>
+        <div className="mr-2 animate-tickdown">
+          <div className="text-4xl font-semibold">{minutes}</div>
+          <div className="text-xs">Minutes</div>
+        </div>
+        <div className="animate-tickdown">
+          <div className="text-4xl font-semibold">{seconds}</div>
+          <div className="text-xs">Seconds</div>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div>
-      <section className=" dark:bg-gray-400 bg-[#000300]">
+      <section className="dark:bg-gray-400 bg-[#000300]">
         <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
           <div className="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-[#b54b9f]">
@@ -14,247 +71,108 @@ export default function Pricing() {
               schedule a meeting to discuss further. Prices may be negotiable or
               require additional costs to meet specific demands.
             </p>
+            <div className="mb-5 text-2xl font-semibold text-[#b54b9f]">
+              Start Up Discount: 40%
+            </div>
+            <div className="mb-5 text-xl font-semibold text-[#b54b9f]">
+              Discount Ends: May 30th
+            </div>
+            <div className="mb-5 flex justify-center">
+              <div className="flex items-center justify-center w-72 h-72 bg-[#F2EFE5] rounded-full">
+                <CountdownCircleTimer
+                  isPlaying
+                  duration={timeRemaining}
+                  strokeWidth={6}
+                  size={300}
+                  colors={[["#004777", 0.33], ["#F7B801", 0.33], ["#A30000", 0.33]]}
+                >
+                  {renderTimer}
+                </CountdownCircleTimer>
+              </div>
+            </div>
           </div>
           <div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
-            <div className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-[#F2EFE5] rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
-              <h3 className="mb-4 text-2xl font-semibold">Starter</h3>
-              <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-                Best Option For Personal Use{" "}
-              </p>
-              <div className="flex justify-center items-baseline my-8">
-                <span className="mr-2 text-4xl font-extrabold">
-                  NPR 10,000 - 25,000
-                </span>
-              </div>
-              <ul role="list" className="mb-8 space-y-4 text-left">
-                <li className="flex items-center space-x-3">
-                  <svg
-                    className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>Light Scale Configuration</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <svg
-                    className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>No setup, or hidden fees</span>
-                </li>
+            {/* Starter Plan */}
+            <PlanCard
+              title="Starter"
+              priceRange={[16665, 40500]}
+              description="Best Option For Personal Use"
+              features={[
+                "Light Scale Configuration",
+                "No setup or hidden fees",
+                "Free Maintenance: 15 Days",
+              ]}
+            />
 
-                <li className="flex items-center space-x-3">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    className="w-6 h-6 text-red-500"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M19.707 4.293A1 1 0 0 0 18.293 3L12 9.293 5.707 3A1 1 0 0 0 4.293 4.293L10.586 11 4.293 17.293a1 1 0 0 0 1.414 1.414L12 12.707l6.293 6.293a1 1 0 0 0 1.414-1.414L13.414 11l6.293-6.293a1 1 0 0 0 0-1.414z"
-                    />
-                  </svg>
-                  <span>
-                    {" "}
-                    Free Hosting: <span className="font-semibold">None</span>
-                  </span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <svg
-                    className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
+            {/* Medium Scale Plan */}
+            <PlanCard
+              title="Medium Scale"
+              priceRange={[41665, 45000]}
+              description="Relevant for Growing Businesses"
+              features={[
+                "Mid Scale Configuration",
+                "No setup or hidden fees",
+                "Free Hosting: 30 Days",
+                "Free Maintenance: 45 Days",
+              ]}
+            />
 
-                  <span>
-                    Free Maintainance{" "}
-                    <span className="font-semibold">15 Days</span>
-                  </span>
-                </li>
-              </ul>
-            </div>
-            <div className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-[#F2EFE5] rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
-              <h3 className="mb-4 text-2xl font-semibold">Medium Scale</h3>
-              <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-                Relevant for Growing Businesses{" "}
-              </p>
-              <div className="flex justify-center items-baseline my-8">
-                <span className="mr-2 text-4xl font-extrabold">
-                  NPR 30,000 - 45,000
-                </span>
-              </div>
-              <ul role="list" className="mb-8 space-y-4 text-left">
-                <li className="flex items-center space-x-3">
-                  <svg
-                    className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>Mid Scale Configuration</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <svg
-                    className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>No setup, or hidden fees</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <svg
-                    className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>
-                    Free Hosting <span className="font-semibold">30 Days</span>
-                  </span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <svg
-                    className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>
-                    Free Maintainance{" "}
-                    <span className="font-semibold">45 days</span>
-                  </span>
-                </li>
-              </ul>
-            </div>
-            <div className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-[#F2EFE5] rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
-              <h3 className="mb-4 text-2xl font-semibold">Large Scale</h3>
-              <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-                Relevant for large scale demands{" "}
-              </p>
-              <div className="flex justify-center items-baseline my-8">
-                <span className="mr-2 text-4xl font-extrabold">
-                  {" "}
-                  NPR 55,000 +{" "}
-                </span>
-              </div>
-              <ul role="list" className="mb-8 space-y-4 text-left">
-                <li className="flex items-center space-x-3">
-                  <svg
-                    className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>Large Scale Configuration</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <svg
-                    className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>No setup, or hidden fees</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <svg
-                    className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>
-                    Free Hosting <span className="font-semibold">60 Days</span>
-                  </span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <svg
-                    className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>
-                    Free Maintainance{" "}
-                    <span className="font-semibold">90 days</span>
-                  </span>
-                </li>
-              </ul>
-            </div>
+            {/* Large Scale Plan */}
+            <PlanCard
+              title="Large Scale"
+              priceRange={[66666, Infinity]}
+              description="Relevant for large scale demands"
+              features={[
+                "Large Scale Configuration",
+                "No setup or hidden fees",
+                "Free Hosting: 60 Days",
+                "Free Maintenance: 90 Days",
+              ]}
+            />
           </div>
         </div>
       </section>
     </div>
   );
 }
+
+// PlanCard component to display each plan
+const PlanCard = ({ title, priceRange, description, features }) => {
+  const discountedPriceRange = calculateDiscountedPrice(priceRange[0]);
+
+  return (
+    <div className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-[#F2EFE5] rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+      <h3 className="mb-4 text-2xl font-semibold">{title}</h3>
+      <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+        {description}
+      </p>
+      <div className="flex justify-center items-baseline my-8">
+        <span className="mr-2 text-4xl font-extrabold">
+          NPR {discountedPriceRange} - {priceRange[1] == Infinity ? "∞" : discountedPriceRange+10001}
+        </span>
+        <span className="line-through text-gray-500">
+          NPR {priceRange[0]} - NPR {priceRange[1] === Infinity ? "∞" : priceRange[1]}
+        </span>
+      </div>
+      <ul role="list" className="mb-8 space-y-4 text-left">
+        {features.map((feature, index) => (
+          <li key={index} className="flex items-center space-x-3">
+            <svg
+              className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fillRule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clipRule="evenodd"
+              ></path>
+            </svg>
+            <span>{feature}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
