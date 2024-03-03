@@ -33,21 +33,7 @@ const CustomSlide = ({
           {header}
         </h1>
         <p>{description}</p>
-        {projectFlag ? (
-          <button
-            className="bg-black text-[#b54b9f] w-[200px] rounded-md font-medium my-6 mx-auto md:mx-0 py-3"
-            onClick={handleClick}
-          >
-            Go to Project
-          </button>
-        ) : (
-          <button
-            className="bg-black text-[#b54b9f] w-[200px] rounded-md font-medium my-6 mx-auto md:mx-0 py-3"
-            onClick={handleClick}
-          >
-            Get Started
-          </button>
-        )}
+       
       </div>
     </div>
   );
