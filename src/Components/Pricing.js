@@ -60,7 +60,7 @@ export default function Pricing() {
 
   return (
     <div>
-      <section className="dark:bg-gray-400 bg-[#000300]">
+      <section className="dark:bg-[#000300] bg-[#000300]">
         <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
           <div className="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-[#b54b9f]">
