@@ -46,6 +46,9 @@ const Footer = () => {
           <a href="https://discord.gg/BEjHUUfXvv" target="_blank">
             <FaDiscord size={30} />
           </a>
+          <a href="https://www.facebook.com/profile.php?id=61557187132667" target="_blank">
+            <FaFacebookSquare size={30} />
+          </a>
         </div>
       </div>
 
