@@ -32,7 +32,7 @@ const Navbar = ({ aboutRef, servicesRef, contactRef, projectRef,ourplansRef }) =
   };
 
   return (
-    <div className="flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white">
+    <div className=" z-10 flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white">
       <h1 className="w-full text-3xl font-bold text-[#b54b9f] cursor-pointer hover:text-gray-400 transition-colors duration-300">
         Saika Nepal 
       </h1>
