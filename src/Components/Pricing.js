@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
+import { ReactTyped } from "react-typed";
 
 // Function to calculate the discounted price
 const calculateDiscountedPrice = (price) => {
@@ -71,14 +72,20 @@ export default function Pricing() {
               schedule a meeting to discuss further. Prices may be negotiable or
               require additional costs to meet specific demands.
             </p>
-            <div className="mb-5 text-2xl font-semibold text-[#b54b9f]">
-              Start Up Discount: 40%
+            <div className="mb-5 text-2xl font-semibold text-[#A4CE95]">
+            <ReactTyped
+            className='md:text-3xl sm:text-xl text-lg font-bold md:pl-4 pl-2'
+            strings={["START UP DISCOUNT : 40%" ]}
+            typeSpeed={120}
+            backSpeed={140}
+            loop
+          />
             </div>
             <div className="mb-5 text-xl font-semibold text-[#b54b9f]">
               Discount Ends: May 30th
             </div>
             <div className="mb-5 flex justify-center">
-              <div className="flex items-center justify-center w-72 h-72 bg-[#F2EFE5] rounded-full">
+              <div className="flex items-center justify-center w-72 h-72 text-[#CCD3CA] rounded-full">
                 <CountdownCircleTimer
                   isPlaying
                   duration={timeRemaining}
@@ -146,12 +153,12 @@ const PlanCard = ({ title, priceRange, description, features }) => {
       <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
         {description}
       </p>
-      <div className="flex justify-center items-baseline my-8">
-        <span className="mr-2 text-4xl font-extrabold">
-          NPR {discountedPriceRange} - {priceRange[1] == Infinity ? "∞" : discountedPriceRange+10001}
+      <div className="flex justify-center items-baseline my-8 relative">
+        <span className="absolute top-0 left-0 right-0 text-center text-gray-500 line-through">
+          NPR {priceRange[0]} - {priceRange[1] === Infinity ? "∞" : priceRange[1]}
         </span>
-        <span className="line-through text-gray-500">
-          NPR {priceRange[0]} - NPR {priceRange[1] === Infinity ? "∞" : priceRange[1]}
+        <span className="mr-2 mt-8 text-3xl font-extrabold relative">
+          NPR {discountedPriceRange} - {priceRange[1] === Infinity ? "∞" : discountedPriceRange + 10001}
         </span>
       </div>
       <ul role="list" className="mb-8 space-y-4 text-left">
