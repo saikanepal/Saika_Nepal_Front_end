@@ -7,7 +7,7 @@ import Cards from './Cards';
 import Footer from './Footer';
 import Career from './Career';
 import Pricing from './Pricing';
-
+import WhatsAppChatButton from './WhatsApp/WhatsAppChatButton';
 const Homepage = () => {
   const aboutRef = useRef(null);
   const servicesRef = useRef(null);
@@ -33,6 +33,7 @@ const Homepage = () => {
       <div ref={ourplansRef}>
         <Pricing/>
       </div>
+      <WhatsAppChatButton phoneNumber={process.env.REACT_APP_NUMBER} />
       <Footer/>
     </div>
   );
