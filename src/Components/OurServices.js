@@ -3,44 +3,41 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import CustomSlider from "./CustomSlider/CustomSlider";
 import CustomSlide from "./CustomSlider/CustomSlide";
-import businessImage from "../assets/business.jpg"
+import businessImage from "../assets/business.gif"
 import individualImage from "../assets/individual.jpg"
 import dataManagement from "../assets/data.png"
-
+import { ReactTyped } from "react-typed";
+import port from "../assets/port.gif";
+import dbms from "../assets/dbms.gif"
+import store from "../assets/store.png"
 const OurServices = () => {
   return (
     <div className="bg-[#EEEDEB] p-16">
-      <p className="mb-3 text-[#b54b9f] font-bold p-2 text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
-        Our Services At Saika Tech
+      <p className="">
+
+        <ReactTyped
+          className='mb-3 text-[#b54b9f] font-bold p-2 text-4xl md:text-4xl lg:text-5xl xl:text-6xl'
+          strings={['Our Services']}
+          typeSpeed={120}
+          backSpeed={140}
+          loop
+        />
       </p>
       <div className="relative">
         <CustomSlider>
           <CustomSlide
-            title="Scalable Business Web App"
-            header="Business needs"
-            description="Every Business Needs Online Recognition,
-           
-
-            we understand the significance of establishing a strong online presence for your business. That's why we specialize in crafting tailored web solutions to elevate your brand and drive success. Whether you're entering the world of e-commerce or aiming to enhance customer engagement, our expertise ensures your website effectively represents your business.
-            
-            With our dedicated support, your website remains optimized, allowing you to focus on what matters most—growing your business.
-            
-            Partner with us today and elevate your online identity."
-            src={
-              businessImage
-            }
+            title="Elevate Your Store"
+            header=" E-commerce Website "
+            description="In today's digital age, a strong e-commerce presence is vital. We specialize in creating tailored online stores that attract and convert customers. From startups to established brands, our expertise ensures a seamless shopping experience. Partner with us today and boost your sales."
+            src={businessImage}
           />
           <CustomSlide
-            title="Personalized Websites for Individuals"
-            header="Individual Needs"
-            description="Personalized Web Solutions for Individuals
+            title="Personal Portfolios"
+            header="Showcase Your Talent"
+            description="Your personal portfolio website is your digital showcase to the world. Whether you're a designer, developer, photographer, or freelancer, we understand the importance of creating a visually stunning and user-friendly platform to showcase your talent and expertise.
 
-            Looking to showcase your talents or establish your personal brand? Saika Tech offers personalized web solutions for individuals, whether you're a freelancer, artist, or someone simply seeking to create a stunning portfolio or personal website. Our custom-built applications are designed to reflect your unique identity and leave a lasting impression.
-            
-            Partner with us today and unlock the potential of your personal online presence."
-            src={
-              individualImage
-            }
+            Our team specializes in crafting personalized portfolio websites that not only highlight your work but also reflect your unique style and personality. With intuitive navigation and responsive design, your portfolio will captivate visitors and leave a lasting impression."
+            src={port}
           />
           <CustomSlide
             title="Streamline Operations with Simplified Database Solutions"
@@ -49,10 +46,10 @@ const OurServices = () => {
 
             With our intuitive systems, you can efficiently track and onboard new clients, members, or employees, empowering your business to thrive. Partner with Saika Tech today and experience the ease of streamlined database management."
             src={
-              dataManagement
+              dbms
             }
           />
-         
+
         </CustomSlider>
         <style>{`
           .slick-prev:before,
