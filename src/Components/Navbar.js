@@ -75,7 +75,7 @@ const Navbar = ({ aboutRef, servicesRef, contactRef, projectRef,ourplansRef }) =
       <ul
         className={
           nav
-            ? "fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500"
+            ? "fixed z-10 left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500"
             : "ease-in-out duration-500 fixed left-[-100%]"
         }
       >
