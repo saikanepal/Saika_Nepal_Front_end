@@ -12,8 +12,8 @@ const AboutSaikaPage = ({ contactRef }) => {
   return (
     <div className="text-white bg-[#000300]">
 
-      <div className="px-4 gap-2 max-w-[800px] mt-[-96px] w-full h-screen mx-auto text-center flex flex-col justify-center pointer-events-none">
-        <div className=" -mb-7 flex justify-center items-center">
+      <div className="px-4 gap-2 max-w-[800px] mt-[-96px] w-full h-screen mx-auto text-center flex flex-col justify-center ">
+        <div className=" pointer-events-none -mb-7 flex justify-center items-center">
           <Lottie
             lottieRef={laptopRef}
             animationData={laptopAnimation}
