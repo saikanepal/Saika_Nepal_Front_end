@@ -3,8 +3,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import CustomSlider from "./CustomSlider/CustomSlider";
 import CareerSlide from "./CustomSlider/CareerSlide";
-import internImage from "../assets/Student.jpg"
-import joinUs from "../assets/joinus.jpg"
+import internImage from "../assets/Student.webp"
+import joinUs from "../assets/joinus.gif"
 
 const Career = () => {
   return (
@@ -12,7 +12,7 @@ const Career = () => {
       <p className="mb-3 text-[#F72798] font-bold p-2 text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
         Job Openings
       </p>
-      <div className="relative">
+      <div className="mt-2 relative">
         <CustomSlider>
           <CareerSlide
             title="Web Developer Student Intern"

@@ -33,7 +33,7 @@ const [emailCopied, setEmailCopied] = useState(false);
   return (
     <div className=" gap-5 max-w-[1240px]  rounded-md  text-black mx-auto grid md:grid-cols-2">
       <img
-        className="w-[500px] mx-auto my-4 rounded-md"
+        className=" w-[500px] mx-auto my-4 shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] rounded-xl"
         src={src ? src : Laptop}
         alt="/"
       />

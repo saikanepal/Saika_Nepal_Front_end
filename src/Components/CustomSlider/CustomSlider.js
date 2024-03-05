@@ -13,6 +13,8 @@ const CustomSlider = ({ children }) => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 10000, // Adjust autoplay speed in milliseconds
+    fade: true, // Use fade animation
+    cssEase: "cubic-bezier(0.645, 0.045, 0.355, 1)", // Set the CSS easing effect
   };
   return (
     <Slider {...settings}>
