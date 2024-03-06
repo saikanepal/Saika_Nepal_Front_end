@@ -12,20 +12,19 @@ import { useNavigate } from "react-router-dom";
 import { setSelectedRequest } from "../../Slices/authSlice";
 import downloader from "../../Utils/Dowload";
 import Confirmation from "../MyModals/Confirmation";
+
 const Tokens = () => {
   const columnHelper = createColumnHelper();
-  // user config
   const token = useSelector((state) => state.authState.token);
   const user = useSelector((state) => state.authState.user);
-  /* the template for loading and notifications */
+
   const [loading, setLoading] = useState(false);
   const [isloading, setIsLoading] = useState(false);
   const [open, setOpen] = useState(false);
   const [status, setStatus] = useState(false);
   const [notificationMessage, setNotificationMessage] = useState("");
-  /*  */
+
   const dispatch = useDispatch();
-  /* Table config */
   const [data, setData] = useState([]);
   const navigate = useNavigate();
   const [tableColumns, setTableColumns] = useState([
@@ -37,6 +36,7 @@ const Tokens = () => {
     columnHelper.accessor("email", { header: "Email" }),
     columnHelper.accessor("pending", { header: "Pending" }),
     columnHelper.accessor("createdAt", { header: "Created At" }),
+    columnHelper.accessor("referencecode", { header: "Reference Code" }), // Add referencecode column
   ]);
 
   const [showConfirmDelete, setShowConfirmDelete] = useState(false);
@@ -47,12 +47,10 @@ const Tokens = () => {
   };
 
   const handleConfirmDelete = (confirmed) => {
-
     if (confirmed) handleDelete();
     setShowConfirmDelete(false);
   };
 
-  /* Function to Fetch All the request */
   const fetch_ALL_Requests = async () => {
     try {
       setLoading(true);
@@ -108,8 +106,6 @@ const Tokens = () => {
                   onClick={() => {
                     setReq(info.row.original);
                     setShowConfirmDelete(true);
-                    /* Old method */
-                    // handleReject(info.row.original)
                   }}
                   className="flex items-center gap-1 bg-red-500 text-white py-1 px-2 rounded-md"
                 >
@@ -126,13 +122,12 @@ const Tokens = () => {
     }
   }, []); // Include tableColumns in the dependency arr
 
-  // logic for approving the row data
   const handleApprove = (rowData) => {
+    console.log(rowData);
     dispatch(setSelectedRequest(rowData));
     return navigate("/approve");
   };
 
-  // logic for rejecting the row data
   const handleReject = async (userrequest) => {
     try {
       setIsLoading(true);

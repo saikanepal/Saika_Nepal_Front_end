@@ -20,6 +20,7 @@ const Approval = () => {
   const selectedrequest = useSelector(
     (state) => state.authState.selectedrequest
   );
+  console.log(selectedrequest);
 
   /* dispatch */
   const dispatch = useDispatch();
@@ -39,6 +40,7 @@ const Approval = () => {
   const [open, setOpen] = useState(false);
   const [status, setStatus] = useState(false);
   const [showConfirmDelete, setShowConfirmDelete] = useState(false);
+  const [referencecode,setreferencecode] = useState("");
   
   useEffect(() => {
     if (user && user.isAdmin !== "admin") navigate("/dashboard");
@@ -106,6 +108,7 @@ const Approval = () => {
         advanceamount: advanceAmount,
         estimationtime: estimationTime,
         discordlink: discordLink,
+        referencecode: selectedrequest.referencecode
       };
       const response = await request.post(
         "/api/project/createproject",
@@ -164,6 +167,7 @@ const Approval = () => {
               projectTitle={projectTitle}
               advanceAmount={advanceAmount}
               message={selectedrequest.message}
+              referencecode={selectedrequest.referencecode}
             />
           )}
           {/* Approval form */}
@@ -302,6 +306,14 @@ const Approval = () => {
                   value={projectTitle}
                   onChange={(e) => setProjectTitle(e.target.value)}
                   className="mt-1 p-2 border border-gray-300 rounded-md w-full"
+                />
+                <input
+                  type="text"
+                  id="referencecode"
+                  value={referencecode}
+                  onChange={(e) => setreferencecode(e.target.value)}
+                  className="mt-1 p-2 border border-gray-300 rounded-md w-full"
+                  placeholder="referencecode"
                 />
               </div>
             </div>

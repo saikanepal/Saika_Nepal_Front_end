@@ -10,6 +10,7 @@ const ContactForm = () => {
     email: "",
     phonenumber: "",
     message: "",
+    referencecode: "" // New field for reference code
   });
   const [open, setOpen] = useState(false);
   const [status, setStatus] = useState(false);
@@ -24,7 +25,7 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { firstname, lastname, email, phonenumber, message } = formData;
+      const { firstname, lastname, email, phonenumber, message, referencecode } = formData;
       if (!firstname || !lastname || !email || !phonenumber || !message)
         throw new Error("All fields required");
       console.log(formData);
@@ -119,6 +120,14 @@ const ContactForm = () => {
               className="p-3 flex w-full rounded-md text-black"
               required
             ></textarea>
+            <input
+              type="text"
+              name="referencecode"
+              value={formData.referencecode}
+              onChange={handleChange}
+              placeholder="Reference Code (OPTIONAL)"
+              className="p-3 flex w-full rounded-md text-black"
+            />
             <button
               type="submit"
               className="w-full text-white bg-green-400 hover:bg-green-500 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-400 dark:hover:bg-green-500 dark:focus:ring-green-800"

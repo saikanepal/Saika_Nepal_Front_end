@@ -14,6 +14,7 @@ const ProjectClientCard = ({
   projectTitle,
   advanceAmount,
   message,
+  referencecode
 }) => {
   return (
     <div className="bg-white shadow-md rounded-md p-4 mb-4">
@@ -34,6 +35,9 @@ const ProjectClientCard = ({
           </p>
           <p>
             <span className="font-semibold">Message:</span> {message}
+          </p>
+          <p>
+            <span className="font-semibold">referencecode:</span> {referencecode}
           </p>
         </div>
         <div className="w-full md:w-1/2 mb-2">
