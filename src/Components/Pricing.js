@@ -155,10 +155,10 @@ const PlanCard = ({ title, priceRange, description, features }) => {
       </p>
       <div className="flex justify-center items-baseline my-8 relative">
         <span className="absolute top-0 left-0 right-0 text-center text-gray-500 line-through">
-          NPR {priceRange[0]} - {priceRange[1] === Infinity ? "∞" : priceRange[1]}
+          NPR {priceRange[0]} - {priceRange[1] === Infinity ? "+" : priceRange[1]}
         </span>
         <span className="mr-2 mt-8 text-3xl font-extrabold relative">
-          NPR {discountedPriceRange} - {priceRange[1] === Infinity ? "∞" : discountedPriceRange + 10001}
+          NPR {discountedPriceRange} - {priceRange[1] === Infinity ? "+" : discountedPriceRange + 10001}
         </span>
       </div>
       <ul role="list" className="mb-8 space-y-4 text-left">
