@@ -1,5 +1,8 @@
 import React from "react";
 import { useState } from "react";
+import Lottie from "lottie-react";
+import mailAnimation from "../assets/mail.json";
+
 import {
   FaDribbbleSquare,
   FaFacebookSquare,
@@ -29,6 +32,11 @@ const Footer = () => {
   return (
 
     <div className="flex justify-center mx-auto py-16 px-4 lg:grid-cols-3 gap-8 text-gray-300 bg-[#000300]">
+        <Lottie
+            className=" -mt-6  w-45 h-40"
+            animationData={mailAnimation}
+          
+          />
       <div className=" text-lg">
         <h1 className="w-full text-3xl font-bold text-[#b54b9f]">Saika Nepal</h1>
       
