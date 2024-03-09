@@ -102,7 +102,7 @@ export default function Pricing() {
             {/* Starter Plan */}
             <PlanCard
               title="Starter"
-              priceRange={[16665, 40500]}
+              priceRange={[16665, 33333]}
               description="Best Option For Personal Use"
               features={[
                 "Light Scale Configuration",
@@ -114,7 +114,7 @@ export default function Pricing() {
             {/* Medium Scale Plan */}
             <PlanCard
               title="Medium Scale"
-              priceRange={[41665, 45000]}
+              priceRange={[41665, 60000]}
               description="Relevant for Growing Businesses"
               features={[
                 "Mid Scale Configuration",
@@ -146,6 +146,7 @@ export default function Pricing() {
 // PlanCard component to display each plan
 const PlanCard = ({ title, priceRange, description, features }) => {
   const discountedPriceRange = calculateDiscountedPrice(priceRange[0]);
+  const discountedPriceRange2 = calculateDiscountedPrice(priceRange[1]);
 
   return (
     <div className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-[#F2EFE5] rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
@@ -155,10 +156,10 @@ const PlanCard = ({ title, priceRange, description, features }) => {
       </p>
       <div className="flex justify-center items-baseline my-8 relative">
         <span className="absolute top-0 left-0 right-0 text-center text-gray-500 line-through">
-          NPR {priceRange[0]} - {priceRange[1] === Infinity ? "+" : priceRange[1]}
+          NPR {priceRange[0]} {priceRange[1] === Infinity ? "+" : - priceRange[1]}
         </span>
         <span className="mr-2 mt-8 text-3xl font-extrabold relative">
-          NPR {discountedPriceRange} - {priceRange[1] === Infinity ? "+" : discountedPriceRange + 10001}
+          NPR {discountedPriceRange} {priceRange[1] === Infinity ? "+" : - discountedPriceRange2} 
         </span>
       </div>
       <ul role="list" className="mb-8 space-y-4 text-left">
