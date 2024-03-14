@@ -32,11 +32,11 @@ const Navbar = ({ aboutRef, servicesRef, contactRef, projectRef, ourplansRef }) 
   };
 
   return (
-    <div className="z-10 flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white">
+    <div class="fixed rounded-md -top-10 pt-10 left-1/2 transform -translate-x-1/2 z-10 flex justify-between items-center h-24 max-w-screen w-full px-4 bg-[#000000] text-white">
       <h1 className="w-full text-3xl font-bold text-[#b54b9f] cursor-pointer hover:text-gray-400 transition-colors duration-300">
         Saika Nepal
       </h1>
-      <ul className="hidden md:flex ">
+      <ul className=" hidden md:flex ">
         <li
           className="p-4 flex items-center hover:text-[#b54b9f] cursor-pointer transition-colors duration-300"
           onClick={() => scrollToRef(aboutRef)}
@@ -75,35 +75,35 @@ const Navbar = ({ aboutRef, servicesRef, contactRef, projectRef, ourplansRef }) 
       <ul
         className={
           nav
-            ? "fixed  z-10 left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500"
-            : "ease-in-out    duration-500 fixed left-[-100%]"
+            ? "fixed  z-10 left-0 max-h-max top-10 w-[60%] h-screen border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500"
+            : "ease-in-out      duration-500 fixed left-[-100%]"
         }
       >
         <h1 className="w-full text-3xl font-bold text-[#b54b9f] m-4  hover:text-gray-400 transition-colors duration-300 cursor-pointer">
           Saika Nepal
         </h1>
         <li
-          className="p-4 border-b border-gray-600 hover:text-[#b54b9f] cursor-pointer transition-colors duration-300 flex items-center"
+          className="p-4 bg-[#000300] border-b border-gray-600 hover:text-[#b54b9f] cursor-pointer transition-colors duration-300 flex items-center"
           onClick={() => scrollToRef(aboutRef)}
         >
           <AiFillHome className=" mr-1"  size={20} /> Home
         </li>
         <li
-          className="p-4 border-b border-gray-600 hover:text-[#b54b9f] cursor-pointer transition-colors duration-300 flex items-center"
+          className="p-4 bg-[#000300] border-b border-gray-600 hover:text-[#b54b9f] cursor-pointer transition-colors duration-300 flex items-center"
           onClick={() => scrollToRef(contactRef)}
         >
           <AiOutlineContacts className=" mr-1"  size={20} /> Contact
         </li>
         <li
-          className="p-4 border-b border-gray-600 hover:text-[#b54b9f] cursor-pointer transition-colors duration-300 flex items-center"
+          className="p-4 border-b bg-[#000300] border-gray-600 hover:text-[#b54b9f] cursor-pointer transition-colors duration-300 flex items-center"
           onClick={() => scrollToRef(servicesRef)}
         >
           <AiOutlineUnorderedList className=" mr-1"  size={20} /> Our Services
         </li>
-        <li className="p-4 border-b border-gray-600 hover:text-[#b54b9f] cursor-pointer transition-colors duration-300 flex items-center" onClick={() => scrollToRef(projectRef)}>
+        <li className="p-4 border-b bg-[#000300] border-gray-600 hover:text-[#b54b9f] cursor-pointer transition-colors duration-300 flex items-center" onClick={() => scrollToRef(projectRef)}>
           <AiOutlineUser size={20} className=" mr-1"  /> Career
         </li>
-        <li className="p-4 border-b border-gray-600 hover:text-[#b54b9f] cursor-pointer transition-colors duration-300 flex items-center" onClick={() => scrollToRef(ourplansRef)}>
+        <li className="p-4 border-b bg-[#000300] border-gray-600 hover:text-[#b54b9f] cursor-pointer transition-colors duration-300 flex items-center" onClick={() => scrollToRef(ourplansRef)}>
           <AiOutlineMenu size={20} className=" mr-1"  /> Our Plans
         </li>
       </ul>
