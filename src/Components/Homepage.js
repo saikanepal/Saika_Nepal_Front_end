@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import Navbar from './Navbar';
+import NavbarNew from './NavbarNew';
 import AboutSaikaPage from './AboutSaikaPage';
 import OurServices from './OurServices';
 import ContactForm from './Forms/ContactForm';
