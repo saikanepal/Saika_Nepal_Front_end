@@ -23,7 +23,7 @@ const CustomSlide = ({
   return (
     <div className=" gap-5 py-4 rounded-lg max-w-[1240px] mx-auto grid text-center lg:text-left lg:grid-cols-2">
       <img
-        className="rounded-tl-[180px] h-[350px] shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] w-[500px] mx-auto my-4"
+        className="lg:rounded-tl-[180px] h-[350px] shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] w-[500px] mx-auto my-4"
         src={src ? src : Laptop}
         alt="/"
       />
