@@ -8,7 +8,7 @@ import joinUs from "../assets/joinus.gif"
 
 const Career = () => {
   return (
-    <div className="bg-[#EEEDEB] p-16">
+    <div className="bg-white p-16">
       <p className="mb-3 text-[#F72798] font-bold p-2 text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
         Job Openings
       </p>
@@ -37,12 +37,12 @@ const Career = () => {
             
           />
         </CustomSlider>
-        <style>{`
+        {/* <style>{`
           .slick-prev:before,
           .slick-next:before {
-            color: black !important;
+            color: black;
           }
-        `}</style>
+        `}</style> */}
       </div>
     </div>
   );
