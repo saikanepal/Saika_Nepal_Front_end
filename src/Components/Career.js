@@ -1,12 +1,34 @@
-import React from "react";
+import React,{useRef, useState} from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import CustomSlider from "./CustomSlider/CustomSlider";
 import CareerSlide from "./CustomSlider/CareerSlide";
-import internImage from "../assets/Student.webp"
+import internImage from "../assets/Animation - 1716823244101.json"
 import joinUs from "../assets/joinus.gif"
-
+import Lottie from "lottie-react";
+// import { create } from '@lottiefiles/lottie-interactivity';
 const Career = () => {
+  const [emailCopied, setEmailCopied] = useState(false);
+  const animateRef=useRef();
+  const handleClick = () => {
+    
+      const emailAddress = 'saikanepal@gmail.com';
+
+      // Copy email address to clipboard
+      navigator.clipboard.writeText(emailAddress)
+        .then(() => {
+          setEmailCopied(true);
+          setTimeout(() => setEmailCopied(false), 2000); // Reset copied state after 2 seconds
+        })
+        .catch((error) => console.error('Failed to copy email: ', error));
+  
+      // Open Gmail in a new tab
+      window.open(`mailto:${emailAddress}`);
+
+     
+    
+  };
+
   return (
     // <div className="bg-white p-16">
     //   <p className="mb-3 text-[#F72798] font-bold p-2 text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
@@ -45,8 +67,29 @@ const Career = () => {
     //     `}</style> */}
     //   </div>
     // </div>
-    <div className="bg-blue-50 flex item-center">
-        <div className="w-4/5 h-screen"></div>
+    <div className="bg-blue-50 flex flex-col items-center justify-center py-10 text-white">
+      <h2 className="text-5xl font-bold mb-16 text-[#112D4E]">Be a Part Of Our Team</h2>
+        <div className="w-5/6 bg-[#3F72AF] flex flex-col lg:flex-row justify-around items-center lg:items-start p-10">
+          <div className="w-[400px] mt-16">
+            <h3 className="text-3xl">Work Along With Us</h3>
+            <div className="h-1 bg-white mt-5 mb-10"></div>
+            <p>Explore remote, friendly, flexible opportunity and join our mission to make things possible.</p>
+            <button
+            className="bg-white text-custom-blue mt-5 px-4 py-2"
+            onClick={handleClick}
+          >
+            Copy Email
+          </button>
+          </div>
+          <div className="w-[400px]">
+          {/* <lottie-player ref={animateRef} id="firstLottie" src='../assets/Animation - 1716823244101.json' controls
+          mode="normal"
+          
+          style={{ width: '320px' }}></lottie-player> */}
+          <Lottie id="firstLottie" lottieRef={animateRef} animationData={internImage} onLoopComplete={()=>{animateRef.current.goToAndPlay(42,true); animateRef.current.setSpeed(0.5)}}/>
+          </div>
+         
+        </div>
     </div>
   );
 };
