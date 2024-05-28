@@ -11,12 +11,11 @@ export default function TransitionAlerts({
       {open && (
         <div className="mb-2">
           <div
-            className={`flex justify-between items-center  p-1 ${
-              status ? "text-green-500" : "text-red-500"
-            } `}
+            className={`flex justify-between items-center p-1 ${status ? "text-[#3F72AF]" : "text-red-500"
+              } `}
             role="alert"
           >
-            <p>{msg}</p>
+            <p className="flex-1">{msg}</p>
             <button
               type="button"
               className="px-4 py-3"
@@ -25,9 +24,8 @@ export default function TransitionAlerts({
               }}
             >
               <svg
-                className={`h-6 w-6 ${
-                  status ? "text-green-500" : "text-red-500"
-                } `}
+                className={`h-6 w-6 ${status ? "text-[#3F72AF]" : "text-red-500"
+                  } `}
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"

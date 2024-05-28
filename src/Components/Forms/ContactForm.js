@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import TransitionAlerts from "../Alerts/TransitionAlerts";
-import Loading from "../Loading/Loading";
+import { ImSpinner8 } from "react-icons/im";
 import request from "../../Utils/HttpRequests";
 import { FaPhoneAlt } from "react-icons/fa";
 import { LuMail } from "react-icons/lu";
@@ -48,7 +48,7 @@ const ContactForm = () => {
         setOpen(true);
         setStatus(true);
         setNotificationMessage(
-          "Thank you for contacting us, we Have Received Your Request we will get back to you soon !!"
+          "Thank you for contacting, we will get back to you soon !!"
         );
       }, 2000);
       // Add logic to submit form data
@@ -61,32 +61,32 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="w-full py-16 px-4 sm:px-16 relative overflow-hidden text-white font-roboto bg-[#3F72AF]">
-      <div className="w-max-[1240px] gap-10 mx-auto grid lg:grid-cols-2">
-        <div className="text-lg flex flex-col gap-10 sm:gap-16 whitespace-normal my-4">
-          <h1 className="md:text-5xl sm:text-3xl text-2xl tracking-wide font-bold py-2">
+    <div className="w-full py-10 sm:py-16 px-4 sm:px-16 relative overflow-hidden text-white font-roboto bg-[#3F72AF]">
+      <div className="w-max-[1240px] gap-5 mx-auto grid lg:grid-cols-2">
+        <div className="text-lg flex flex-col gap-2 sm:gap-10 lg:gap-16 whitespace-normal my-4">
+          <h1 className="md:text-5xl sm:text-3xl text-3xl sm:tracking-wide font-bold py-2">
             GET IN TOUCH WITH US
           </h1>
           <h1 className="md:text-5xl sm:text-3xl tracking-wide text-2xl font-bold py-2">
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col sm:gap-2">
               <div className="text-[#94B5EF]">LETS CHANGE AN IDEA </div>
               <div> <span className="text-[#94B5EF]">INTO A </span>REALITY</div>
             </div>
           </h1>
-          <div className="flex flex-col gap-5 text-[#BCD4FF] text-lg sm:text-xl">
-            <span className="flex gap-10 items-center "><FaPhoneAlt />98XXXXXXX</span>
+          <div className="hidden lg:flex lg:flex-col gap-5 text-[#BCD4FF] text-lg sm:text-xl">
+            <span className="flex gap-10 items-center "><FaPhoneAlt />9702781000</span>
             <span className="flex gap-10 items-center"><LuMail />saikanepal@gmail.com</span>
           </div>
-          <div className="flex gap-5 text-[#BCD4FF]">
-            <a href="https://www.linkedin.com/" target="_blank"><FaDiscord size={25} /></a>
-            <a href="https://www.linkedin.com/" target="_blank"><FaInstagram size={25} /></a>
-            <a href="https://www.instagram.com/" target="_blank"><FaLinkedinIn size={25} /></a>
-            <a href="https://www.linkedin.com/" target="_blank"><FaFacebookF size={25} /></a>
+          <div className="hidden lg:flex gap-5 text-[#BCD4FF]">
+            <a href="https://discord.gg/rjuUH7jW" target="_blank"><FaDiscord size={25} /></a>
+            <a href="https://www.linkedin.com/company/103794010/" target="_blank"><FaInstagram size={25} /></a>
+            <a href="https://www.instagram.com/saikanepal/" target="_blank"><FaLinkedinIn size={25} /></a>
+            <a href="https://www.facebook.com/profile.php?id=61557187132667" target="_blank"><FaFacebookF size={25} /></a>
           </div>
         </div>
-        <div className="my-4 lg:w-[80%] w-full justify-self-end">
-          <div className="bg-white rounded-2xl p-8 sm:p-10 ">
-            <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
+        <div className="my-2 sm:my-4 lg:w-[80%] w-full justify-self-end">
+          <div className="bg-white rounded-2xl p-6 sm:p-10 ">
+            <form className="space-y-2 md:space-y-6" onSubmit={handleSubmit}>
               <div className="mb-4">
                 <div className="flex flex-col sm:flex-row gap-4">
                   <label
@@ -174,7 +174,7 @@ const ContactForm = () => {
                   htmlFor="referencecode"
                   className="block text-lg font-bold text-[#3F72AF] mb-1"
                 >
-                  Promo Code
+                  Promo Code (Optional)
                 </label>
                 <input
                   type="text"
@@ -182,7 +182,7 @@ const ContactForm = () => {
                   name="referencecode"
                   value={formData.referencecode}
                   onChange={handleChange}
-                  placeholder="98-XXXXXXXX"
+                  placeholder="98-XXXXXXX"
                   className="pt-3 w-full border-b-2 sm:border-b-4 border-[#93B4EF] text-black focus:outline-none"
                 />
               </div>
@@ -209,12 +209,13 @@ const ContactForm = () => {
 
               <button
                 type="submit"
-                className="w-full text-white bg-[#7eadff] hover:bg-[#3F72AF] focus:ring-4 focus:outline-none focus:ring-[##3F72AF] font-bold rounded-lg text-lg px-5 py-2.5 text-center"
+                className={`w-full text-white bg-[#7eadff] ${isLoading && "hover:bg-none"} hover:bg-[#3F72AF] focus:ring-4 focus:outline-none focus:ring-[##3F72AF] font-bold rounded-lg text-lg px-5 py-2.5 text-center`}
+                disabled={isLoading}
               >
-                Submit
+                {isLoading ? <ImSpinner8 className="animate-spin mx-auto" /> : "Submit"}
               </button>
-              {isLoading && <Loading />}
               <TransitionAlerts
+
                 msg={notificationMessage}
                 open={open}
                 setOpen={setOpen}
@@ -222,19 +223,27 @@ const ContactForm = () => {
               />
             </form>
           </div>
-          <div className="flex justify-center mt-2">
-            <p className="text-[#7eadff]">
-              Your personal Data is secured with us.
-            </p>
-          </div>
         </div>
+      </div>
+      <div className="mt-16 pl-2 flex flex-col sm:flex-row gap-5 justify-between">
+        <div className="lg:hidden flex flex-col gap-3 text-[#BCD4FF] text-lg tracking-wide sm:text-xl">
+          <span className="flex gap-5 sm:gap-5 items-center "><FaPhoneAlt />9702781000</span>
+          <span className="flex gap-5 sm:gap-5 items-center"><LuMail />saikanepal@gmail.com</span>
+        </div>
+        <div className="lg:hidden flex gap-5 sm:gap-5 text-[#BCD4FF]">
+          <a href="https://discord.gg/rjuUH7jW" target="_blank"><FaDiscord size={25} /></a>
+          <a href="https://www.linkedin.com/company/103794010/" target="_blank"><FaInstagram size={25} /></a>
+          <a href="https://www.instagram.com/saikanepal/" target="_blank"><FaLinkedinIn size={25} /></a>
+          <a href="https://www.facebook.com/profile.php?id=61557187132667" target="_blank"><FaFacebookF size={25} /></a>
+        </div>
+
       </div>
       <img src={bgBubbleImage} alt='Background Bubble' style={{ height: '500px' }} className='hidden lg:block absolute top-[10%] 
       right-[38%]' />
 
       <img src={bgBubbleImage} alt='Background Bubble' style={{ height: '500px' }} className='hidden lg:block absolute -rotate-90 left-[20%] bottom-[10%]' />
 
-    </div>
+    </div >
   );
 };
 
