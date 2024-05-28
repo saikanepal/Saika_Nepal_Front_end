@@ -75,7 +75,7 @@ const ContactForm = () => {
           </h1>
           <div className="hidden lg:flex lg:flex-col gap-5 text-[#BCD4FF] text-lg sm:text-xl">
             <span className="flex gap-10 items-center "><FaPhoneAlt />9702781000</span>
-            <span className="flex gap-10 items-center"><LuMail />saikanepal@gmail.com</span>
+            <a href="mailto:saikanepal@gmail.com" className="flex gap-10 items-center"><LuMail />saikanepal@gmail.com</a>
           </div>
           <div className="hidden lg:flex gap-5 text-[#BCD4FF]">
             <a href="https://discord.gg/rjuUH7jW" target="_blank"><FaDiscord size={25} /></a>
@@ -226,7 +226,7 @@ const ContactForm = () => {
         </div>
       </div>
       <div className="mt-16 pl-2 flex flex-col sm:flex-row gap-5 justify-between">
-        <div className="lg:hidden flex flex-col gap-3 text-[#BCD4FF] text-lg tracking-wide sm:text-xl">
+        <div className="lg:hidden flex flex-col gap-3 text-[#BCD4FF] text-md tracking-wide sm:text-xl">
           <span className="flex gap-5 sm:gap-5 items-center "><FaPhoneAlt />9702781000</span>
           <span className="flex gap-5 sm:gap-5 items-center"><LuMail />saikanepal@gmail.com</span>
         </div>
