@@ -70,7 +70,7 @@ const Career = () => {
     <div className="bg-blue-50 flex flex-col items-center justify-center py-10 text-white">
       <h2 className="text-5xl font-bold mb-16 text-[#112D4E] text-center">Be a Part Of Our Team</h2>
         <div className="w-5/6 bg-[#3F72AF] flex flex-col lg:flex-row justify-around items-center lg:items-start p-10">
-          <div className="lg:w-[400px] mt-16">
+          <div className="lg:w-[400px] lg:mt-16">
             <h3 className="text-3xl">Work Along With Us</h3>
             <div className="h-1 bg-white mt-5 mb-10"></div>
             <p>Explore remote, friendly, flexible opportunity and join our mission to make things possible.</p>
