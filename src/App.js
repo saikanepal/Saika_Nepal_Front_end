@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 import Tokens from "./Components/Request/Tokens";
-import Loading from "./Components/Loading/Loading";
+import Loader from "./Components/Loader/Loader";
 
 // Lazy load components
 const Homepage = React.lazy(() => import("./Components/Homepage"));
@@ -18,7 +18,7 @@ const App = () => {
   return (
     <div className="app">
       <main>
-        <Suspense fallback={<Loading/>}>
+        <Suspense fallback={<Loader />}>
           <Routes>
             <Route exact path="/" element={<Homepage />} />
             <Route exact path="/navnew" element={<NavbarNew />} />
@@ -30,7 +30,6 @@ const App = () => {
             <Route exact path="/approve" element={<Approval />} />
             <Route exact path="/projects" element={<Projects />} />
             <Route exact path="/editproject" element={<EditProject />} />
-            
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </Suspense>
