@@ -1,4 +1,4 @@
-import React,{useRef, useState} from "react";
+import React, { useRef, useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import CustomSlider from "./CustomSlider/CustomSlider";
@@ -10,24 +10,24 @@ import Lottie from "lottie-react";
 // import { create } from '@lottiefiles/lottie-interactivity';
 const Career = () => {
   const [emailCopied, setEmailCopied] = useState(false);
-  const animateRef=useRef();
+  const animateRef = useRef();
   const handleClick = () => {
-    
-      const emailAddress = 'saikanepal@gmail.com';
 
-      // Copy email address to clipboard
-      navigator.clipboard.writeText(emailAddress)
-        .then(() => {
-          setEmailCopied(true);
-          setTimeout(() => setEmailCopied(false), 2000); // Reset copied state after 2 seconds
-        })
-        .catch((error) => console.error('Failed to copy email: ', error));
-  
-      // Open Gmail in a new tab
-      window.open(`mailto:${emailAddress}`);
+    const emailAddress = 'saikanepal@gmail.com';
 
-     
-    
+    // Copy email address to clipboard
+    navigator.clipboard.writeText(emailAddress)
+      .then(() => {
+        setEmailCopied(true);
+        setTimeout(() => setEmailCopied(false), 2000); // Reset copied state after 2 seconds
+      })
+      .catch((error) => console.error('Failed to copy email: ', error));
+
+    // Open Gmail in a new tab
+    window.open(`mailto:${emailAddress}`);
+
+
+
   };
 
   return (
@@ -57,7 +57,7 @@ const Career = () => {
     //           joinUs
     //         }
     //         projectFlag={false}
-            
+
     //       />
     //     </CustomSlider>
     //     {/* <style>{`
@@ -68,32 +68,32 @@ const Career = () => {
     //     `}</style> */}
     //   </div>
     // </div>
-    <div className="bg-blue-50 flex flex-col font-Saira items-center justify-center py-10 text-white">
-      <h2 className="text-5xl font-bold mb-16 text-[#112D4E] text-center">Be a Part Of Our Team</h2>
-        <div className="w-5/6 bg-[#3F72AF] lg:bg-transparent flex flex-col lg:flex-row justify-center items-center lg:items-start p-10">
-          <div className="relative lg:w-[400px] lg:mt-16">
-            <div className="lg:absolute z-10">
+    <div className="bg-blue-50 flex flex-col font-Saira items-center justify-center py-16 text-white">
+      <h2 className="text-5xl font-bold mb-16  text-[#112D4E] text-center">Be a Part Of Our Team</h2>
+      <div className="w-5/6 bg-[#3F72AF] lg:bg-transparent flex flex-col lg:flex-row justify-center items-center lg:items-start p-10">
+        <div className="relative lg:w-[400px] lg:mt-16">
+          <div className="lg:absolute z-10">
             <h3 className="text-3xl">Work Along With Us</h3>
             <div className=" h-1 md:w-[300px] lg:w-full bg-white mt-5 mb-10"></div>
             <p className="">Are you looking for a remote, friendly, and flexible work environment? If you're eager to contribute to our startup culture , we want to hear from you. Send us your resume and a brief message at saikanepal@gmail.com</p>
             <button
-            className="bg-white text-custom-blue mt-8 px-4 py-2"
-            onClick={handleClick}
-          >
-            Copy Email
-          </button>
-            </div>
-          <div className="absolute hidden lg:block lg:-top-20 lg:-left-28 w-[700px] z-0"><img src={bubbleImage} className=""/></div>
+              className="bg-white text-custom-blue mt-8 px-4 py-2"
+              onClick={handleClick}
+            >
+              Copy Email
+            </button>
           </div>
-          <div className="md-w-[400px]">
+          <div className="absolute hidden lg:block lg:-top-20 lg:-left-28 w-[700px] z-0"><img src={bubbleImage} className="" /></div>
+        </div>
+        <div className="md-w-[400px]">
           {/* <lottie-player ref={animateRef} id="firstLottie" src='../assets/Animation - 1716823244101.json' controls
           mode="normal"
           
           style={{ width: '320px' }}></lottie-player> */}
           <Lottie id="firstLottie" animationData={internImage} />
-          </div>
-         
         </div>
+
+      </div>
     </div>
   );
 };
