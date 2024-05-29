@@ -40,7 +40,7 @@ const Navbar = ({ aboutRef, servicesRef, contactRef, projectRef }) => {
   };
 
   return (
-    <div className={`fixed top-0 left-2 right-0 z-50 w-full p-4 mb-10 transition-colors duration-100 ${bgColor}`}>
+    <div className={`fixed top-0 left-0 right-0 z-50 w-full p-4 mb-10 transition-colors duration-100 ${bgColor}`}>
       <div className="flex justify-between items-center h-24 max-w-screen-2xl mx-auto px-4">
         <div className="flex items-center h-full">
           <img src={Logo} alt="Logo" className="h-full cursor-pointer" />
