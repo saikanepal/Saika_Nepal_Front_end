@@ -4,7 +4,7 @@ import { ReactComponent as BubbleSVG } from "../assets/bubble.svg";
 
 const AboutSaikaPage = ({ contactRef }) => {
   return (
-    <div className="relative text-black bg-gradient-to-b from-white to-gray-200 w-full">
+    <div className="relative text-black bg-gradient-to-b  w-full">
       <div className="max-w-screen-2xl mx-auto px-4 py-8 md:py-16 flex flex-col lg:flex-row items-center justify-between min-h-screen relative">
         <div className="lg:w-1/2 mb-8 lg:mb-0 mt-20 lg:mt-44 flex flex-col items-center lg:items-start sm:items-center">
           <div className="flex flex-col mb-6 mt-10 lg:mt-0">
@@ -21,7 +21,6 @@ const AboutSaikaPage = ({ contactRef }) => {
             Simplifying your online presence, from websites to data management. Let's ensure your web journey is seamless.
             <span className="block text-blue-500 mt-2">Join us today.</span>
           </p>
-
           <div className="flex justify-center lg:justify-start mb-4 relative py-8">
             <button
               onClick={() => contactRef.current.scrollIntoView({ behavior: "smooth" })}

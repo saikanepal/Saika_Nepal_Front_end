@@ -16,17 +16,17 @@ const Footer = () => {
             <div className="hidden lg:block absolute -right-32 h-full border-l-2 border-white"></div>
 
             <img className='w-40' src={saikaLogo} />
-            <div className="flex gap-1 sm:gap-3 lg:gap-5 mx-auto font-bold text-white ">
+            <div className="flex gap-3 sm:gap-3 lg:gap-5 mx-auto font-bold text-white ">
               <a className='hidden sm:block hover:bg-white p-2 rounded-full hover:text-pink-700' href="https://www.linkedin.com/company/103794010/" target="_blank"><FaInstagram size={25} /></a>
               <a className='hidden sm:block hover:bg-white p-2 rounded-full hover:text-[#4e5d94]' href="https://discord.gg/rjuUH7jW" target="_blank"><FaDiscord size={25} /></a>
               <a className='hidden sm:block hover:bg-white p-2 rounded-full hover:text-[#4267B2]' href="https://www.facebook.com/profile.php?id=61557187132667" target="_blank"><FaFacebookF size={25} /></a>
               <a className='hidden sm:block hover:bg-white p-2 rounded-full hover:text-[#0077B5]' href="https://www.instagram.com/saikanepal/" target="_blank"><FaLinkedinIn size={25} /></a>
 
               {/* FOR SMALLER SCREEN SIZE  */}
-              <a className='block sm:hidden' href="https://www.linkedin.com/company/103794010/" target="_blank"><FaInstagram size={15} /></a>
+              <a className='block sm:hidden' href="https://www.instagram.com/saikanepal/" target="_blank"><FaInstagram size={15} /></a>
               <a className='block sm:hidden' href="https://discord.gg/rjuUH7jW" target="_blank"><FaDiscord size={15} /></a>
               <a className='block sm:hidden' href="https://www.facebook.com/profile.php?id=61557187132667" target="_blank"><FaFacebookF size={15} /></a>
-              <a className='block sm:hidden' href="https://www.instagram.com/saikanepal/" target="_blank"><FaLinkedinIn size={15} /></a>
+              <a className='block sm:hidden' href="https://www.linkedin.com/company/103794010/" target="_blank"><FaLinkedinIn size={15} /></a>
             </div>
           </div>
 

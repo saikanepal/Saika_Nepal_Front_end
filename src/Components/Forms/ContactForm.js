@@ -79,8 +79,8 @@ const ContactForm = () => {
           </div>
           <div className="hidden lg:flex gap-5 text-[#BCD4FF]">
             <a href="https://discord.gg/rjuUH7jW" target="_blank"><FaDiscord size={25} /></a>
-            <a href="https://www.linkedin.com/company/103794010/" target="_blank"><FaInstagram size={25} /></a>
-            <a href="https://www.instagram.com/saikanepal/" target="_blank"><FaLinkedinIn size={25} /></a>
+            <a href="https://www.instagram.com/saikanepal/" target="_blank"><FaInstagram size={25} /></a>
+            <a href="https://www.linkedin.com/company/103794010/" target="_blank"><FaLinkedinIn size={25} /></a>
             <a href="https://www.facebook.com/profile.php?id=61557187132667" target="_blank"><FaFacebookF size={25} /></a>
           </div>
         </div>
