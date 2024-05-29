@@ -83,13 +83,16 @@ const OurServices = () => {
           .slick-prev:before {
             content: '🞀'; 
             position:absolute;
-            left:-10px
+            left:-10px;
+            top:-20px;
           }
+
+         
           
           .slick-next:before {
             content: '🞂'; 
             position:absolute;
-            right:10px
+            top:-20px;
           }
           
           
