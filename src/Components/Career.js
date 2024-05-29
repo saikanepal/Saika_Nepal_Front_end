@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import CustomSlider from "./CustomSlider/CustomSlider";
 import CareerSlide from "./CustomSlider/CareerSlide";
 import internImage from "../assets/Animation - 1716823244101.json"
+import bubbleImage from '../assets/Vectorcloud.png'
 import joinUs from "../assets/joinus.gif"
 import Lottie from "lottie-react";
 // import { create } from '@lottiefiles/lottie-interactivity';
@@ -67,21 +68,24 @@ const Career = () => {
     //     `}</style> */}
     //   </div>
     // </div>
-    <div className="bg-blue-50 flex flex-col items-center justify-center py-10 text-white">
+    <div className="bg-blue-50 flex flex-col font-Saira items-center justify-center py-10 text-white">
       <h2 className="text-5xl font-bold mb-16 text-[#112D4E] text-center">Be a Part Of Our Team</h2>
-        <div className="w-5/6 bg-[#3F72AF] flex flex-col lg:flex-row justify-around items-center lg:items-start p-10">
-          <div className="lg:w-[400px] mt-16">
+        <div className="w-5/6 bg-[#3F72AF] lg:bg-transparent flex flex-col lg:flex-row justify-center items-center lg:items-start p-10">
+          <div className="relative lg:w-[400px] lg:mt-16">
+            <div className="lg:absolute z-10">
             <h3 className="text-3xl">Work Along With Us</h3>
-            <div className="h-1 bg-white mt-5 mb-10"></div>
-            <p>Explore remote, friendly, flexible opportunity and join our mission to make things possible.</p>
+            <div className=" h-1 md:w-[300px] lg:w-full bg-white mt-5 mb-10"></div>
+            <p className="">Are you looking for a remote, friendly, and flexible work environment? If you're eager to contribute to our startup culture , we want to hear from you. Send us your resume and a brief message at saikanepal@gmail.com</p>
             <button
-            className="bg-white text-custom-blue mt-5 px-4 py-2"
+            className="bg-white text-custom-blue mt-8 px-4 py-2"
             onClick={handleClick}
           >
             Copy Email
           </button>
+            </div>
+          <div className="absolute hidden lg:block lg:-top-20 lg:-left-28 w-[700px] z-0"><img src={bubbleImage} className=""/></div>
           </div>
-          <div className="md:w-[400px]">
+          <div className="md-w-[400px]">
           {/* <lottie-player ref={animateRef} id="firstLottie" src='../assets/Animation - 1716823244101.json' controls
           mode="normal"
           
