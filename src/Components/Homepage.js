@@ -6,7 +6,7 @@ import ContactForm from "./Forms/ContactForm";
 import Cards from "./Cards";
 import Footer from "./Footer";
 import Career from "./Career";
-import Pricing from "./Pricing";
+
 import Website from "./YourWebsite";
 import WhatsAppChatButton from "./WhatsApp/WhatsAppChatButton";
 import YourWebsite from "./YourWebsite";
@@ -43,9 +43,7 @@ const Homepage = () => {
       <div ref={projectRef}>
         <Career />
       </div>
-      <div ref={ourplansRef}>
-        <Pricing />
-      </div>
+      
       <WhatsAppChatButton phoneNumber={process.env.REACT_APP_NUMBER} />
       <Footer />
     </div>
