@@ -1,8 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
 /* body{
   background-color: #000300;
 } */
+
+.letter {
+  animation: fade 2s infinite;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}

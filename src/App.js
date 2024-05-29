@@ -1,9 +1,11 @@
 import React, { Suspense } from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 import Tokens from "./Components/Request/Tokens";
+import Loader from "./Components/Loader/Loader";
 
 // Lazy load components
 const Homepage = React.lazy(() => import("./Components/Homepage"));
+const NavbarNew = React.lazy(() => import("./Components/NavbarNew"));
 const SignIn = React.lazy(() => import("./Components/Auth/SignIn"));
 const Dashboard = React.lazy(() => import("./Components/Dashboard/Dashboard"));
 const Employees = React.lazy(() => import("./Components/Employees/Employees"));
@@ -16,9 +18,10 @@ const App = () => {
   return (
     <div className="app">
       <main>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<Loader />}>
           <Routes>
             <Route exact path="/" element={<Homepage />} />
+            <Route exact path="/navnew" element={<NavbarNew />} />
             <Route exact path="/admin" element={<SignIn />} />
             <Route exact path="/dashboard" element={<Dashboard />} />
             <Route exact path="/add-user" element={<AddUser />} />
@@ -27,7 +30,6 @@ const App = () => {
             <Route exact path="/approve" element={<Approval />} />
             <Route exact path="/projects" element={<Projects />} />
             <Route exact path="/editproject" element={<EditProject />} />
-            
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </Suspense>
