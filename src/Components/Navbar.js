@@ -117,3 +117,4 @@ const Navbar = ({ aboutRef, servicesRef, contactRef, projectRef }) => {
 };
 
 export default Navbar;
+

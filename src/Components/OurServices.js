@@ -8,7 +8,7 @@ import individualImage from "../assets/individual.jpg"
 import dataManagement from "../assets/data.png"
 import { ReactTyped } from "react-typed";
 import port from "../assets/port.gif";
-import dbms from "../assets/dbms.gif"
+import dbms from "../assets/database.jpg"
 import store from "../assets/store.png";
 import marketingWebsite from "../assets/marketing_website.gif";
 import mobileApp from "../assets/mobile_app.gif";
@@ -16,15 +16,9 @@ import hostingServices from "../assets/hosting_services.gif";
 
 const OurServices = () => {
   return (
-    <div className="bg-[#EEEDEB] p-16">
-      <p className="">
-        <ReactTyped
-          className='mb text-[#FF3EA5] font-bold p-2 text-4xl md:text-4xl lg:text-5xl xl:text-6xl'
-          strings={['Our Services']}
-          typeSpeed={150}
-          backSpeed={140}
-          loop
-        />
+    <div className="bg-blue-50 p-16">
+      <p className="text-5xl text-center font-bold mb-10">
+        Our <span className="text-custom-blue font-Saira">Services</span>
       </p>
       <div className="relative mt-2">
         <CustomSlider>
@@ -72,8 +66,36 @@ const OurServices = () => {
         <style>{`
           .slick-prev:before,
           .slick-next:before {
-            color: black !important;
+            content: '';
+            display: block;
+            text-align: center;
+            line-height: 40px; /* Ensure the text is vertically centered */
+            width: 40px;
+            height: 40px;
+            font-size:40px;
+            border-radius: 50%;
+            background-color: ;
+            color: #3F72AF !important;
+            font-weight:bolder;
+           
           }
+          
+          .slick-prev:before {
+            content: '🞀'; 
+            position:absolute;
+            left:-10px;
+            top:-20px;
+          }
+
+         
+          
+          .slick-next:before {
+            content: '🞂'; 
+            position:absolute;
+            top:-20px;
+          }
+          
+          
         `}</style>
       </div>
     </div>
