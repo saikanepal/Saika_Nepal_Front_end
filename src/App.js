@@ -4,6 +4,7 @@ import Tokens from "./Components/Request/Tokens";
 
 // Lazy load components
 const Homepage = React.lazy(() => import("./Components/Homepage"));
+const NavbarNew = React.lazy(() => import("./Components/NavbarNew"));
 const SignIn = React.lazy(() => import("./Components/Auth/SignIn"));
 const Dashboard = React.lazy(() => import("./Components/Dashboard/Dashboard"));
 const Employees = React.lazy(() => import("./Components/Employees/Employees"));
@@ -19,6 +20,7 @@ const App = () => {
         <Suspense fallback={<div>Loading...</div>}>
           <Routes>
             <Route exact path="/" element={<Homepage />} />
+            <Route exact path="/navnew" element={<NavbarNew />} />
             <Route exact path="/admin" element={<SignIn />} />
             <Route exact path="/dashboard" element={<Dashboard />} />
             <Route exact path="/add-user" element={<AddUser />} />
