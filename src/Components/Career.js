@@ -86,7 +86,7 @@ const Career = () => {
           mode="normal"
           
           style={{ width: '320px' }}></lottie-player> */}
-          <Lottie id="firstLottie" lottieRef={animateRef} animationData={internImage} onLoopComplete={()=>{animateRef.current.goToAndPlay(42,true); animateRef.current.setSpeed(0.5)}}/>
+          <Lottie id="firstLottie" animationData={internImage} />
           </div>
          
         </div>
