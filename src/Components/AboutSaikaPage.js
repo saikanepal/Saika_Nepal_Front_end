@@ -8,12 +8,12 @@ const AboutSaikaPage = ({ contactRef }) => {
       <div className="max-w-screen-2xl mx-auto px-4 py-8 md:py-16 flex flex-col lg:flex-row items-center justify-between min-h-screen relative">
         <div className="lg:w-1/2 mb-8 lg:mb-0 mt-20 lg:mt-44 flex flex-col items-center lg:items-start sm:items-center">
           <div className="flex flex-col mb-6 mt-10 lg:mt-0">
-            <h1 className="text-3xl sm:text-5xl lg:text-7xl text-center lg:text-left font-bold">
+            <h1 className="text-3xl sm:text-5xl lg:text-7xl text-center lg:text-left font-bold font-Saira">
               IGNITE <span className="text-purple-600" style={{ color: '#3F72AF' }}>SUCCESS</span>
             </h1>
-            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold text-center lg:text-left">WITH US</h1>
+            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold text-center lg:text-left font-Saira mt-2">WITH US</h1>
           </div>
-          <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold mb-8 text-center lg:text-left">
+          <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold mb-8 text-center lg:text-left font-Saira">
             YOUR DIGITAL <span className="text-blue-500" style={{ color: '#3F72AF' }}>SPARK</span>
           </h1>
           <hr className="w-full lg:w-[480px] border-t-2 border-blue-500 mx-auto lg:mx-0 mb-8" />
