@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 import Tokens from "./Components/Request/Tokens";
+import Loading from "./Components/Loading/Loading";
 
 // Lazy load components
 const Homepage = React.lazy(() => import("./Components/Homepage"));
@@ -16,7 +17,7 @@ const App = () => {
   return (
     <div className="app">
       <main>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<Loading/>}>
           <Routes>
             <Route exact path="/" element={<Homepage />} />
             <Route exact path="/admin" element={<SignIn />} />
