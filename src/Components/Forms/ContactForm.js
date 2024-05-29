@@ -64,7 +64,7 @@ const ContactForm = () => {
     <div className="w-full py-10 sm:py-16 px-4 sm:px-16 relative overflow-hidden text-white font-roboto bg-[#3F72AF]">
       <div className="w-max-[1240px] gap-5 mx-auto grid lg:grid-cols-2">
         <div className="text-lg flex flex-col gap-2 sm:gap-10 lg:gap-16 whitespace-normal my-4">
-          <h1 className="md:text-5xl sm:text-3xl text-3xl sm:tracking-wide font-bold py-2">
+          <h1 className="md:text-5xl sm:text-3xl text-3xl sm:tracking-wide font-bold py-2 font-Saira">
             GET IN TOUCH WITH US
           </h1>
           <h1 className="md:text-5xl sm:text-3xl tracking-wide text-2xl font-bold py-2">
