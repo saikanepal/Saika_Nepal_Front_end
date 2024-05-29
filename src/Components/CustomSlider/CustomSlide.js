@@ -21,18 +21,18 @@ const CustomSlide = ({
   };
 
   return (
-    <div className=" gap-5 py-4 rounded-lg max-w-[1240px] mx-auto grid text-center lg:text-left lg:grid-cols-2">
+    <div className=" lg:gap-5 py-4 rounded-lg max-w-[1240px] mx-auto grid text-center lg:text-left lg:grid-cols-2">
       <img
-        className="lg:rounded-tl-[180px] h-[350px] shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] w-[500px] mx-auto my-4"
+        className="rounded-lg lg:rounded-tl-[180px] h-[200px] lg:h-[350px] shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] w-[500px] mx-auto my-4"
         src={src ? src : Laptop}
         alt="/"
       />
-      <div className="mt-5 flex flex-col">
-        <p className="text-[#b54b9f] font-bold text-custom-blue ">{title}</p>
+      <div className="lg:mt-5 flex flex-col">
+        <p className="text-[#b54b9f] hidden lg:block font-bold text-custom-blue ">{title}</p>
         <h1 className="md:text-4xl sm:text-3xl text-2xl font-bold py-2">
           {header}
         </h1>
-        <p className="mt-12 text-custom-blue">{description}</p>
+        <p className="hidden lg:block mt-12 text-custom-blue">{description}</p>
        
       </div>
     </div>

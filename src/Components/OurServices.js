@@ -18,7 +18,7 @@ const OurServices = () => {
   return (
     <div className="bg-blue-50 p-16">
       <p className="text-5xl text-center font-bold mb-10">
-        Our <span className="text-custom-blue">Services</span>
+        Our <span className="text-custom-blue font-Saira">Services</span>
       </p>
       <div className="relative mt-2">
         <CustomSlider>
@@ -82,10 +82,14 @@ const OurServices = () => {
           
           .slick-prev:before {
             content: '🞀'; 
+            position:absolute;
+            left:-10px
           }
           
           .slick-next:before {
             content: '🞂'; 
+            position:absolute;
+            right:10px
           }
           
           
