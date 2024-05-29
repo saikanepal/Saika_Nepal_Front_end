@@ -1,69 +1,74 @@
-import React from "react";
-import { useState } from "react";
-import Lottie from "lottie-react";
-import mailAnimation from "../assets/mail.json";
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { FaLinkedinIn } from "react-icons/fa";
+import { FaDiscord } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { FaFacebookF } from "react-icons/fa6";
 
-import {
-  FaDribbbleSquare,
-  FaFacebookSquare,
-  FaGithubSquare,
-  FaInstagram,
-  FaTwitterSquare,
-  FaEnvelope,
-  FaDiscord
-} from "react-icons/fa";
+import saikaLogo from "../assets/logo192.png"
 
 const Footer = () => {
-  const [emailCopied, setEmailCopied] = useState(false);
-  const handleEmailClick = () => {
-    const emailAddress = 'contact@saikanepal.com';
-
-    // Copy email address to clipboard
-    navigator.clipboard.writeText(emailAddress)
-      .then(() => {
-        setEmailCopied(true);
-        setTimeout(() => setEmailCopied(false), 2000); // Reset copied state after 2 seconds
-      })
-      .catch((error) => console.error('Failed to copy email: ', error));
-
-    // Open Gmail in a new tab
-    window.open(`mailto:${emailAddress}`);
-  };
   return (
+    <div className='font-roboto tracking-wide'>
+      <footer className="bg-[#112D4E]">
+        <div className="grid w-full grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 lg:gap-10 px-6 sm:px-8 lg:px-16 py-10 sm:py-16 items-start justify-center">
+          <div className='w-[80%] md:w-[60%] gap-3 lg:col-span-2 flex flex-col justify-center items-center relative '>
+            <div className="hidden lg:block absolute -right-32 h-full border-l-2 border-white"></div>
 
-    <div className="flex justify-center mx-auto py-16 px-4 lg:grid-cols-3 gap-8 text-gray-300 bg-[#000300]">
-        <Lottie
-            className=" -mt-6  w-45 h-40"
-            animationData={mailAnimation}
-          
-          />
-      <div className=" text-lg">
-        <h1 className="w-full text-3xl font-bold text-[#b54b9f]">Saika Nepal</h1>
-      
-        <div className="flex items-center cursor-pointer" onClick={handleEmailClick}>
-          <FaEnvelope size={24} className="mr-2" />
-          <p className={`text-[#b54b9f] ${emailCopied ? 'text-green-500' : ''}`}>
-            {emailCopied ? 'Copied!' : 'contact@saikanepal.com'}
-          </p>
+            <img src={saikaLogo} />
+            <div className="flex gap-1 sm:gap-3 lg:gap-5 mx-auto font-bold text-white ">
+              <a className='hidden sm:block' href="https://www.linkedin.com/company/103794010/" target="_blank"><FaInstagram size={25} /></a>
+              <a className='hidden sm:block' href="https://discord.gg/rjuUH7jW" target="_blank"><FaDiscord size={25} /></a>
+              <a className='hidden sm:block' href="https://www.facebook.com/profile.php?id=61557187132667" target="_blank"><FaFacebookF size={25} /></a>
+              <a className='hidden sm:block' href="https://www.instagram.com/saikanepal/" target="_blank"><FaLinkedinIn size={25} /></a>
+
+              {/* FOR SMALLER SCREEN SIZE  */}
+              <a className='block sm:hidden' href="https://www.linkedin.com/company/103794010/" target="_blank"><FaInstagram size={15} /></a>
+              <a className='block sm:hidden' href="https://discord.gg/rjuUH7jW" target="_blank"><FaDiscord size={15} /></a>
+              <a className='block sm:hidden' href="https://www.facebook.com/profile.php?id=61557187132667" target="_blank"><FaFacebookF size={15} /></a>
+              <a className='block sm:hidden' href="https://www.instagram.com/saikanepal/" target="_blank"><FaLinkedinIn size={15} /></a>
+            </div>
+          </div>
+
+          {/* Saika Nepal  */}
+          <div className='text-[12px] md:text-lg '>
+            <p className="font-bold text-white">Saika Nepal</p>
+            <div className="flex flex-col items-start mt-2  text-white space-y-1 ">
+              <Link to="/" className=" transition-colors duration-300 hover:text-white">About Us</Link>
+              <Link to="/" className=" transition-colors duration-300 hover:text-white">Contact Us</Link>
+              <Link to="/" className=" transition-colors duration-300 hover:text-white">Carrer</Link>
+              <Link to="/" className=" transition-colors duration-300 hover:text-white">Services</Link>
+            </div>
+          </div>
+
+          {/* What we do  */}
+          <div className='hidden sm:block text-[12px] md:text-lg'>
+            <p className="font-bold text-white ">What we do</p>
+            <div className="flex flex-col items-start mt-2 space-y-1 text-white">
+              <Link to="/expedition" className=" transition-colors duration-300 hover:text-white">Designing</Link>
+              <Link to="/" className=" transition-colors duration-300 hover:text-white">DevOps and Cloud</Link>
+              <Link to="/trekking" className=" transition-colors duration-300 hover:text-white">Webpage Development</Link>
+              <Link to="/" className=" transition-colors duration-300 hover:text-white">Mobile App Development</Link>
+              <Link to="/" className=" transition-colors duration-300 hover:text-white">Hosting and Domain</Link>
+            </div>
+          </div>
+
+          {/* Join US  */}
+          <div className='text-[12px] md:text-lg'>
+            <p className="font-bold text-white ">Join Us</p>
+            <div className="flex flex-col items-start my-3 space-y-1 text-white">
+              <Link to="/" className="transition-colors duration-300 hover:text-white">Carrer</Link>
+              <Link to="/" className="transition-colors duration-300 hover:text-white">Internship</Link>
+              <Link to="/" className="transition-colors duration-300 hover:text-white">Fellowship</Link>
+              <Link to="/" className="transition-colors duration-300 hover:text-white">Life at Saika Nepal</Link>
+            </div>
+
+          </div>
+
         </div>
-        <div className="flex gap-2 justify-start md:w-[75%] my-3 cursor-pointer">
+      </footer >
+    </div >
+  )
+}
 
-          <a href="https://www.instagram.com/saikanepal/" target="_blank">
-            <FaInstagram size={30} />
-          </a>
-          <a href="https://discord.gg/BEjHUUfXvv" target="_blank">
-            <FaDiscord size={30} />
-          </a>
-          <a href="https://www.facebook.com/profile.php?id=61557187132667" target="_blank">
-            <FaFacebookSquare size={30} />
-          </a>
-        </div>
-      </div>
-
-    </div>
-
-    
-  );
-};
-
-export default Footer;
+export default Footer
