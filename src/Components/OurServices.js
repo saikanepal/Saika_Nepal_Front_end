@@ -17,8 +17,8 @@ import hostingServices from "../assets/hosting_services.gif";
 const OurServices = () => {
   return (
     <div className="bg-blue-50 p-16">
-      <p className="text-5xl text-center font-bold mb-10">
-        Our <span className="text-custom-blue font-Saira">Services</span>
+      <p className="text-5xl text-center font-bold mb-10 font-Saira">
+        Our <span className="text-custom-blue ">Services</span>
       </p>
       <div className="relative mt-2">
         <CustomSlider>
