@@ -1,3 +1,5 @@
+
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -8,6 +10,9 @@ module.exports = {
       colors: {
         "custom-blue": "#3F72AF",
         
+      },
+      fontFamily: {
+        Saira: ['Saira', 'sans-serif'],
       },
     },
   },
