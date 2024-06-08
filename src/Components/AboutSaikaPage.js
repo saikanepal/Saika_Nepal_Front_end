@@ -5,8 +5,8 @@ import { ReactComponent as BubbleSVG } from "../assets/bubble.svg";
 const AboutSaikaPage = ({ contactRef }) => {
   return (
     <div className="relative text-black bg-gradient-to-b  w-full">
-      <div className="max-w-screen-2xl mx-auto px-4 py-8 md:py-16 flex flex-col lg:flex-row items-center justify-between min-h-screen relative">
-        <div className="lg:w-1/2 mb-8 lg:mb-0 mt-20 lg:mt-44 flex flex-col items-center lg:items-start sm:items-center">
+      <div className="max-w-screen-2xl xl:px-10 sm:px-20 md:px-18 lg:px-12 mx-auto px-4 py-8 md:py-16 flex flex-col lg:flex-row items-center justify-between min-h-screen relative">
+        <div className="lg:w-1/2  mb-8 lg:mb-0 mt-20 lg:mt-44 flex flex-col items-center lg:items-start sm:items-center">
           <div className="flex flex-col mb-6 mt-10 lg:mt-0">
             <h1 className="text-3xl sm:text-5xl lg:text-7xl text-center lg:text-left font-bold font-Saira">
               IGNITE <span className="text-purple-600" style={{ color: '#3F72AF' }}>SUCCESS</span>
@@ -31,7 +31,7 @@ const AboutSaikaPage = ({ contactRef }) => {
             </button>
           </div>
         </div>
-        <div className="lg:w-1/2 flex justify-center lg:justify-end mt-20 lg:ml-10 sm:ml-0 relative z-10">
+        <div className="lg:w-1/2 flex justify-center lg:justify-end md:mt-0 lg:mt-20  lg:ml-10 sm:ml-0 relative z-10">
           <img
             src={laptopImage} // Replace with your actual image source
             alt="Laptop"
