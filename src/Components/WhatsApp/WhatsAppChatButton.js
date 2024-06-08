@@ -28,19 +28,19 @@ const WhatsAppChatButton = ({ phoneNumber }) => {
   };
 
   return createPortal(
-    <div className="fixed bottom-12 right-8 z-20">
+    <div className="fixed bottom-12 left-8 z-20">
       {isSmallDevice ? (
         expanded ? (
           <button
             onClick={openWhatsAppChat}
-            className="bg-green-500 text-white px-4 py-2 rounded-md shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75"
+            className="bg-[#244977] text-[#244977] px-4 py-2 rounded-md shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75"
           >
             Chat with us on WhatsApp
           </button>
         ) : (
           <button
             onClick={toggleExpansion}
-            className="bg-green-500 text-white p-2 rounded-full flex items-center justify-center shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75"
+            className="bg-[#244977] text-white p-2 rounded-full flex items-center justify-center shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75"
           >
             <FiMessageCircle size={28} />
           </button>
@@ -48,7 +48,7 @@ const WhatsAppChatButton = ({ phoneNumber }) => {
       ) : (
         <button
           onClick={openWhatsAppChat}
-          className="bg-green-500 text-white px-4 py-2 rounded-md shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75"
+          className="bg-[#244977] text-white px-4 py-2 rounded-md shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75"
         >
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/512px-WhatsApp.svg.png"
