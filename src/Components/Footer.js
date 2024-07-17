@@ -31,7 +31,7 @@ const Footer = () => {
           </div>
 
           {/* Saika Nepal  */}
-          <div className='text-[12px] md:text-lg '>
+        <div className='text-[12px] md:text-lg '>
             <p className="font-bold text-white">Saika Nepal</p>
             <div className="flex flex-col items-start mt-2 text-[10px] md:text-base  text-white space-y-1 ">
               <Link to="/" className=" transition-colors duration-300 hover:text-white">About Us</Link>
