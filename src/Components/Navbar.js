@@ -40,12 +40,12 @@ const Navbar = ({ aboutRef, servicesRef, contactRef, projectRef }) => {
   };
 
   return (
-    <div className={`fixed top-0 left-0 right-0 z-50 w-full p-4 mb-10 transition-colors duration-100 ${bgColor}`}>
+    <div className={`fixed top-0 left-0 right-0 z-50 w-full p-4 py-1 mb-10 transition-colors duration-100 ${bgColor}`}>
       <div className="flex justify-between items-center h-24 max-w-screen-2xl mx-auto px-4">
         <div className="flex items-center h-full">
           <img src={Logo} alt="Logo" className="h-full cursor-pointer" />
         </div>
-        <div className="hidden md:flex flex-1 justify-center text-white rounded-md max-w-2xl mx-2 p-4 pl-6 ml-4" style={{ backgroundColor: '#3F72AF' }}>
+        <div className="hidden md:flex flex-1 justify-center text-white rounded-md max-w-2xl mx-2 p-4 py-1 pl-6 ml-4" style={{ backgroundColor: '#3F72AF' }}>
           <ul className="flex justify-center items-center h-full space-x-6 text-lg">
             <li
               className="p-4 flex items-center hover:text-black cursor-pointer transition-colors duration-300"

@@ -17,10 +17,10 @@ const Footer = () => {
 
             <img className='w-40' src={saikaLogo} />
             <div className="flex gap-3 sm:gap-3 lg:gap-5 mx-auto font-bold text-white ">
-              <a className='hidden sm:block hover:bg-white p-2 rounded-full hover:text-pink-700' href="https://www.linkedin.com/company/103794010/" target="_blank"><FaInstagram size={25} /></a>
+              <a className='hidden sm:block hover:bg-white p-2 rounded-full hover:text-[#0077B5]' href="https://www.instagram.com/saikanepal/" target="_blank"><FaInstagram size={25} /></a>
+              <a className='hidden sm:block hover:bg-white p-2 rounded-full hover:text-pink-700' href="https://www.linkedin.com/company/103794010/" target="_blank"><FaLinkedinIn size={25} /></a>
               <a className='hidden sm:block hover:bg-white p-2 rounded-full hover:text-[#4e5d94]' href="https://discord.gg/rjuUH7jW" target="_blank"><FaDiscord size={25} /></a>
               <a className='hidden sm:block hover:bg-white p-2 rounded-full hover:text-[#4267B2]' href="https://www.facebook.com/profile.php?id=61557187132667" target="_blank"><FaFacebookF size={25} /></a>
-              <a className='hidden sm:block hover:bg-white p-2 rounded-full hover:text-[#0077B5]' href="https://www.instagram.com/saikanepal/" target="_blank"><FaLinkedinIn size={25} /></a>
 
               {/* FOR SMALLER SCREEN SIZE  */}
               <a className='block sm:hidden' href="https://www.instagram.com/saikanepal/" target="_blank"><FaInstagram size={15} /></a>
@@ -31,7 +31,7 @@ const Footer = () => {
           </div>
 
           {/* Saika Nepal  */}
-          <div className='text-[12px] md:text-lg '>
+        <div className='text-[12px] md:text-lg '>
             <p className="font-bold text-white">Saika Nepal</p>
             <div className="flex flex-col items-start mt-2 text-[10px] md:text-base  text-white space-y-1 ">
               <Link to="/" className=" transition-colors duration-300 hover:text-white">About Us</Link>
